@@ -16,7 +16,7 @@ An FSM can be represented in one of the following ways:
 - Output becomes `1` whenever the FSM detects three or more consecutive '1’s in the input stream.
 
 📷 *State Table & State Diagram*  
-![FSM State Diagram](./images/fsm-3-consecutive-1s.png)
+![FSM State Diagram](./images/StateTable_StateDiagram.png)
 
 ---
 
@@ -53,7 +53,7 @@ Next state is determined by the current state and current input.
   Output depends only on the current state.
 
 📷 *Mealy vs Moore Pictorial Depiction*  
-![Mealy vs Moore](./images/mealy-vs-moore.png)
+![Mealy vs Moore](./images/MealyMoorePictorialDescription.png)
 
 ---
 
