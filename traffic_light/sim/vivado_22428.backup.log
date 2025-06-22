@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Jun 22 19:47:23 2025
+# Process ID         : 22428
+# Current directory  : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim
+# Command line       : vivado.exe -mode batch -source synth.tcl
+# Log file           : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim/vivado.log
+# Journal file       : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim\vivado.jou
+# Running On         : UchchhashBD
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3000 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25626 MB
+# Swap memory        : 1610 MB
+# Total Virtual      : 27236 MB
+# Available Virtual  : 8839 MB
+#-----------------------------------------------------------
+source synth.tcl
+# set_part xc7a35tcpg236-1
+INFO: [Coretcl 2-1500] The part has been set to 'xc7a35tcpg236-1' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+# read_verilog {E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/design/traffic_light.v}
+ERROR: [Common 17-69] Command failed: File 'E:/My' does not exist
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 22 19:47:28 2025...

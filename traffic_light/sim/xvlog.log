@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/design/traffic_light.v" into library work
+INFO: [VRFC 10-311] analyzing module traffic_light
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/tb/tb_traffic_light.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_traffic_light

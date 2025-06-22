@@ -1,0 +1,14 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: L:/VIVADO/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe tb_traffic_light -debug typical 
+Multi-threading is on. Using 4 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.traffic_light
+Compiling module work.tb_traffic_light
+Built simulation snapshot work.tb_traffic_light

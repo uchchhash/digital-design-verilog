@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Jun 22 19:27:33 2025
+# Process ID         : 10948
+# Current directory  : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/work.tb_traffic_light/xsim_script.tcl}
+# Log file           : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim/xsim.log
+# Journal file       : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim\xsim.jou
+# Running On         : UchchhashBD
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3000 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25626 MB
+# Swap memory        : 1610 MB
+# Total Virtual      : 27236 MB
+# Available Virtual  : 9060 MB
+#-----------------------------------------------------------
+source xsim.dir/work.tb_traffic_light/xsim_script.tcl
+# xsim {work.tb_traffic_light} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Time: 0, Light State: xx
+Time: 5000, Light State: 00
+Time: 25000, Light State: 01
+Time: 35000, Light State: 10
+Time: 45000, Light State: 00
+Time: 55000, Light State: 01
+Time: 65000, Light State: 10
+Time: 75000, Light State: 00
+Time: 85000, Light State: 01
+$finish called at time : 95 ns : File "E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/tb/tb_traffic_light.v" Line 28
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Jun 22 19:27:36 2025...

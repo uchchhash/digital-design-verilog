@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Jun 22 19:49:26 2025
+# Process ID         : 11064
+# Current directory  : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim
+# Command line       : vivado.exe -mode batch -source synth.tcl
+# Log file           : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim/vivado.log
+# Journal file       : E:/My Drive/Learning Path/Hardware Modelling using Verilog/digital-design-verilog/traffic_light/sim\vivado.jou
+# Running On         : UchchhashBD
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3000 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25626 MB
+# Swap memory        : 1610 MB
+# Total Virtual      : 27236 MB
+# Available Virtual  : 8731 MB
+#-----------------------------------------------------------
+source synth.tcl
