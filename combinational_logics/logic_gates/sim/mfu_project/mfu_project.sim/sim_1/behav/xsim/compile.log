@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/design/mfu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mfu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_mfu

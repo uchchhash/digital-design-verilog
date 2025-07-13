@@ -1,0 +1,40 @@
+Time resolution is 1 ps
+Starting MFU Testbench
+ Match: Output=0 [sel=000, a=0, b=0]
+ Match: Output=0 [sel=000, a=0, b=1]
+ Match: Output=0 [sel=000, a=1, b=0]
+ Match: Output=1 [sel=000, a=1, b=1]
+ Match: Output=0 [sel=001, a=0, b=0]
+ Match: Output=1 [sel=001, a=0, b=1]
+ Match: Output=1 [sel=001, a=1, b=0]
+ Match: Output=1 [sel=001, a=1, b=1]
+ Match: Output=1 [sel=010, a=0, b=0]
+ Match: Output=1 [sel=010, a=0, b=1]
+ Match: Output=0 [sel=010, a=1, b=0]
+ Match: Output=0 [sel=010, a=1, b=1]
+ Match: Output=1 [sel=011, a=0, b=0]
+ Match: Output=1 [sel=011, a=0, b=1]
+ Match: Output=1 [sel=011, a=1, b=0]
+ Match: Output=0 [sel=011, a=1, b=1]
+ Match: Output=1 [sel=100, a=0, b=0]
+ Match: Output=0 [sel=100, a=0, b=1]
+ Match: Output=0 [sel=100, a=1, b=0]
+ Match: Output=0 [sel=100, a=1, b=1]
+ Match: Output=0 [sel=101, a=0, b=0]
+ Match: Output=1 [sel=101, a=0, b=1]
+ Match: Output=1 [sel=101, a=1, b=0]
+ Match: Output=0 [sel=101, a=1, b=1]
+ Match: Output=1 [sel=110, a=0, b=0]
+ Match: Output=0 [sel=110, a=0, b=1]
+ Match: Output=0 [sel=110, a=1, b=0]
+ Match: Output=1 [sel=110, a=1, b=1]
+ Match: Output=0 [sel=111, a=0, b=0]
+ Match: Output=0 [sel=111, a=0, b=1]
+ Match: Output=0 [sel=111, a=1, b=0]
+ Match: Output=0 [sel=111, a=1, b=1]
+-------------------------------------------------
+Test Summary: 32 passed, 0 failed
+ All tests passed successfully!
+-------------------------------------------------
+Testbench completed.
+$finish called at time : 320 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv" Line 37
