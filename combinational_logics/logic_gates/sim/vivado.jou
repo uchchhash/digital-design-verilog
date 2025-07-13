@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Jul 13 23:21:02 2025
-# Process ID         : 42756
+# Start of session at: Mon Jul 14 01:50:18 2025
+# Process ID         : 56908
 # Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/sim
 # Command line       : vivado
 # Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/sim/vivado.log
@@ -13,35 +13,47 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
-# CPU Frequency      : 3996.337 MHz
+# CPU Frequency      : 4089.696 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 6
 # Host memory        : 25054 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 33644 MB
-# Available Virtual  : 26280 MB
+# Available Virtual  : 25739 MB
 #-----------------------------------------------------------
 start_gui
-create_project mfu_project /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/sim/mfu_project -part xc7a12tcpg238-3
-add_files -norecurse /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/design/mfu.sv
-add_files -fileset sim_1 -norecurse /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv
+create_project majority_voter /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/sim/majority_voter -part xc7a12tcpg238-3
+add_files -norecurse {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_votes.sv /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/design/votes.sv}
 update_compile_order -fileset sources_1
 launch_simulation
-source tb_mfu.tcl
-add_bp {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} 18
-remove_bps -file {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} -line 18
-add_bp {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} 21
-add_bp {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} 22
-remove_bps -file {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} -line 22
-add_bp {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} 23
-add_bp {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} 22
-remove_bps -file {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} -line 21
-remove_bps -file {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} -line 22
-remove_bps -file {/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_mfu.sv} -line 23
-close_sim
-launch_simulation
-source tb_mfu.tcl
+source tb_votes.tcl
+update_compile_order -fileset sources_1
 launch_runs synth_1 -jobs 3
 wait_on_run synth_1
 open_run synth_1 -name synth_1
+set_property used_in_synthesis false [get_files  /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_votes.sv]
+set_property used_in_implementation false [get_files  /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_votes.sv]
+update_compile_order -fileset sources_1
 close_sim
+launch_simulation
+source tb_votes.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+launch_runs impl_1 -jobs 3
+wait_on_run impl_1
+open_run impl_1
+close_sim
+close_project
+create_project majority_voter_reduced /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/sim/majority_voter_reduced -part xc7a12tcpg238-3
+add_files -norecurse /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/design/votes_reduced.sv
+add_files -fileset sim_1 -norecurse /home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_votes.sv
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+source tb_votes.tcl
+launch_runs synth_1 -jobs 3
+wait_on_run synth_1
+launch_runs impl_1 -jobs 3
+wait_on_run impl_1
+open_run impl_1

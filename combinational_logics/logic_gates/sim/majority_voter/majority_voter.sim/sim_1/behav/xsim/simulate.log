@@ -1,0 +1,24 @@
+Time resolution is 1 ps
+Starting 4-Input Majority Voter Testbench
+ Match: Output=0 [A=0 B=0 C=0 D=0]
+ Match: Output=0 [A=0 B=0 C=0 D=1]
+ Match: Output=0 [A=0 B=0 C=1 D=0]
+ Match: Output=0 [A=0 B=0 C=1 D=1]
+ Match: Output=0 [A=0 B=1 C=0 D=0]
+ Match: Output=0 [A=0 B=1 C=0 D=1]
+ Match: Output=0 [A=0 B=1 C=1 D=0]
+ Match: Output=1 [A=0 B=1 C=1 D=1]
+ Match: Output=0 [A=1 B=0 C=0 D=0]
+ Match: Output=0 [A=1 B=0 C=0 D=1]
+ Match: Output=0 [A=1 B=0 C=1 D=0]
+ Match: Output=1 [A=1 B=0 C=1 D=1]
+ Match: Output=0 [A=1 B=1 C=0 D=0]
+ Match: Output=1 [A=1 B=1 C=0 D=1]
+ Match: Output=1 [A=1 B=1 C=1 D=0]
+ Match: Output=1 [A=1 B=1 C=1 D=1]
+-------------------------------------------------
+Test Summary: 16 passed, 0 failed
+ All tests passed successfully!
+-------------------------------------------------
+Testbench completed.
+$finish called at time : 160 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/logic_gates/tb/tb_votes.sv" Line 44
