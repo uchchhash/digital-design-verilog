@@ -21,20 +21,18 @@
 ## 🎯 Overview
 
 ✅ *Combinational logic circuits* have **no memory or state** — outputs depend only on current inputs.  
-✅ Each section below has:
-- 📄 Theory: key principles and algorithms
-- 💻 RTL: Verilog/SystemVerilog implementations
-- 📂 [Docs, Design, TB, Sim folders](.) in each [category folder](.)  
+✅ Each section includes theory topics and RTL implementations.  
 
 ---
 
 ## 🔷 General Combinational Logic Blocks
 
 ### 1️⃣ [Logic Gates](logic_gates/)
-- Theory: Signals, digital vs analog, need for digital
-- Theory: Boolean algebra, duality, complement, redundancy
-- Theory: SOP & POS forms, minimal vs canonical forms
-- Theory: K-map minimization (2–5 variables), Quine-McCluskey method
+- Theory: Signals & Digital Electronics Basics  
+- Theory: Boolean Algebra (Intro, Examples, Redundancy Theorem)  
+- Theory: SOP & POS Forms (SOP, POS, Examples, Canonical & Minimal Forms, Tricks)  
+- Theory: Positive/Negative Logic, Duality & Complementation  
+- Theory: Karnaugh Maps & Minimization (K-Maps, Implicants, Don’t Care, QM Method, 4-5 Variables, Max Terms)  
 - RTL:
   - AND, OR, NOT
   - NAND, NOR
@@ -45,14 +43,16 @@
 ---
 
 ### 2️⃣ [Arithmetic Circuits](arithmetic_circuits/)
-- Theory: Binary addition, subtraction, multiplication, division
-- Theory: Data representations: signed magnitude, 1’s complement, 2’s complement
-- Theory: Binary arithmetic in different number systems
+- Theory: Binary Arithmetic (Addition, Subtraction, Multiplication, Division)  
+- Theory: Octal Arithmetic (Addition, Subtraction, Multiplication)  
+- Theory: Hexadecimal Arithmetic (Addition, Subtraction, Multiplication)  
+- Theory: Complements & Data Representations (r’s, (r-1)’s, 1’s, 2’s, signed magnitude)  
+- Theory: Binary Subtraction with Complements  
 - RTL:
   - Half-adder
   - Full-adder
   - Ripple-carry adder (N-bit)
-  - Subtractor (N-bit), half & full
+  - Subtractor (Half, Full, Full using NAND/NOR, with DEMUX)
   - Carry-lookahead adder
   - Parallel adder/subtractor with overflow detection
   - Carry-save adder
@@ -67,8 +67,8 @@
 ---
 
 ### 3️⃣ [Multiplexers & Demultiplexers](multiplexers_demultiplexers/)
-- Theory: MUX introduction, hierarchical MUX trees
-- Theory: Realizing Boolean functions using MUX
+- Theory: Multiplexers (Intro, 4x1, 8x1, Trees, Boolean Function Realization, Full Adder with MUX, Expressions)  
+- Theory: Demultiplexers (1:2, 1:4, DEMUX as Decoder, Full Subtractor with DEMUX)  
 - RTL:
   - 2:1 MUX
   - 4:1 MUX
@@ -83,7 +83,8 @@
 ---
 
 ### 4️⃣ [Encoders & Decoders](encoders_decoders/)
-- Theory: Encoders, priority encoders, decoders, seven-segment display
+- Theory: Encoders & Decoders (Intro, Priority, Decimal→BCD, Octal→Binary, Hex→Binary, Full Adder with Decoder)  
+- Theory: Seven Segment Display Decoder  
 - RTL:
   - 2:4 decoder
   - 3:8 decoder
@@ -102,9 +103,10 @@
 ---
 
 ### 5️⃣ [Code Converters](code_converters/)
-- Theory: Number systems — binary, octal, decimal, hexadecimal
-- Theory: Codes — BCD, Excess-3, 2421, Gray
-- Theory: Shift-add-3 method for binary-to-BCD
+- Theory: Code Systems & Conversions (BCD, Excess-3, 2421, Gray)  
+- Theory: BCD Operations (Addition, Binary↔BCD, Shift Add-3)  
+- Theory: Excess-3 Operations  
+- Theory: Gray Code Operations  
 - RTL:
   - Binary to Gray
   - Gray to Binary
@@ -116,8 +118,7 @@
 ---
 
 ### 6️⃣ [Parity & Error Detection](parity_error_detection/)
-- Theory: Parity concept, error detection & correction
-- Theory: Hamming codes, CRC
+- Theory: Parity & Error Detection (Parity, Hamming Codes)  
 - RTL:
   - Even parity generator
   - Odd parity generator
@@ -135,8 +136,7 @@
 ---
 
 ### 7️⃣ [Shifters & Rotators](shifters_rotators/)
-- Theory: Logical vs arithmetic shifting
-- Theory: Rotations & barrel shifters
+- Theory: Logical vs arithmetic shifting, Rotations & barrel shifters  
 - RTL:
   - Logical left shifter
   - Logical right shifter
@@ -151,7 +151,7 @@
 ---
 
 ### 8️⃣ [Comparators & Detectors](comparators_detectors/)
-- Theory: Comparators — 1-bit, 2-bit, N-bit
+- Theory: Comparators (1-bit, 2-bit)  
 - RTL:
   - 1-bit comparator
   - N-bit comparator
@@ -164,7 +164,7 @@
 ---
 
 ### 9️⃣ [ALU & Datapath Elements](alu_datapath_elements/)
-- Theory: Arithmetic Logic Unit operations
+- Theory: Arithmetic Logic Unit operations  
 - RTL:
   - ALU:
     - AND, OR, XOR, NOT
@@ -184,8 +184,8 @@
 ---
 
 ### 🔟 [Miscellaneous](miscellaneous/)
-- Theory: Switching circuits & practice problems
-- Theory: Practice with K-map, Quine-McCluskey
+- Theory: Switching Circuits & Practice Problems  
+- Theory: Combinational vs Sequential Circuits Comparison  
 - RTL:
   - Priority logic (arbitration/grant)
   - Priority arbiters
