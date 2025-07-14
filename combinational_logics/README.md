@@ -53,9 +53,9 @@
   - Full-adder
   - Ripple-carry adder (N-bit)
   - Carry-lookahead adder
+  - Carry-save adder
   - Parallel adder/subtractor with overflow detection
   - Subtractor (Half, Full, Full using NAND/NOR, with DEMUX)
-  - Carry-save adder
   - Wallace tree multiplier
   - Booth multiplier (signed)
   - Array multiplier (combinational)
