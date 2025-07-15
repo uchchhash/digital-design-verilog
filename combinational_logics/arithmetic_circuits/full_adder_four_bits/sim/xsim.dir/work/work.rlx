@@ -1,8 +1,0 @@
-0.7
-2020.2
-May 21 2025
-22:59:56
-/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/design/full_adder.sv,1752506363,systemVerilog,,/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/tb/tb_full_adder.sv,,full_adder,,,,,,,,
-/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/design/half_adder.sv,1752522146,systemVerilog,,/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/design/full_adder.sv,,half_adder,,,,,,,,
-/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/tb/tb_full_adder.sv,1752506094,systemVerilog,,,,tb_full_adder,,,,,,,,
-/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/tb/tb_half_adder.sv,1752504468,systemVerilog,,,,tb_half_adder,,,,,,,,

@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/design/half_adder.sv" into library work
-INFO: [VRFC 10-311] analyzing module half_adder
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/design/full_adder.sv" into library work
-INFO: [VRFC 10-311] analyzing module full_adder
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/combinational_logics/arithmetic_circuits/full_adder_four_bits/tb/tb_full_adder.sv" into library work
-INFO: [VRFC 10-311] analyzing module tb_full_adder
