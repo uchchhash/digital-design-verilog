@@ -11,7 +11,7 @@ module tb_adder_3op_16bit;
     int total_passed = 0;
     int total_failed = 0;
 
-    int NUM_RANDOM_TESTS = 20;
+    int NUM_RANDOM_TESTS = 100000;
 
     // Instantiate DUT
     rca_3op_16bit DUT (
@@ -33,6 +33,15 @@ module tb_adder_3op_16bit;
         run_test(16'hFFFF, 16'hFFFF, 16'hFFFF, 1'b0);
         run_test(16'd12345, 16'd54321, 16'd11111, 1'b0);
         run_test(16'd40000, 16'd25535, 16'd1000, 1'b0);
+        run_test(16'h0000, 16'h0000, 16'h0000, 1'b1);
+        run_test(16'h0001, 16'h0001, 16'h0001, 1'b1);
+        run_test(16'hFFFF, 16'h0000, 16'h0000, 1'b1);
+        run_test(16'hFFFF, 16'hFFFF, 16'h0000, 1'b1);
+        run_test(16'hFFFF, 16'hFFFF, 16'hFFFF, 1'b1);
+        run_test(16'd12345, 16'd54321, 16'd11111, 1'b1);
+        run_test(16'd40000, 16'd25535, 16'd1000, 1'b1);
+
+
 
         // // Randomized test cases
         // $display("🔷 Running %0d randomized test cases...", NUM_RANDOM_TESTS);

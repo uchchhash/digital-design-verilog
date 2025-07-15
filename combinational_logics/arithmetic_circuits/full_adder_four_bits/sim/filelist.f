@@ -4,5 +4,5 @@
 
 // Testbench
 //../tb/tb_half_adder.sv
-//../tb/tb_full_adder.sv
+../tb/tb_full_adder.sv
 

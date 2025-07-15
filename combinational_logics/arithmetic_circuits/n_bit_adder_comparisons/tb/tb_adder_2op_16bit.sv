@@ -11,7 +11,7 @@ module tb_adder_2op_16bit;
     int total_passed = 0;
     int total_failed = 0;
 
-    int NUM_RANDOM_TESTS = 20000;
+    int NUM_RANDOM_TESTS = 2000000;
 
     // Instantiate DUT
     rca_2op_16bit DUT (
@@ -30,6 +30,18 @@ module tb_adder_2op_16bit;
         run_test(16'hFFFF, 16'h0000, 1'b0);
         run_test(16'hFFFF, 16'h0001, 1'b0);
         run_test(16'hFFFF, 16'hFFFF, 1'b0);
+        run_test(16'hF0F0, 16'h0F0F, 1'b0);
+        run_test(16'hF000, 16'h000F, 1'b0);
+        run_test(16'hF00F, 16'hF00F, 1'b0);
+        run_test(16'h0000, 16'h0000, 1'b1);
+        run_test(16'h0001, 16'h0001, 1'b1);
+        run_test(16'hFFFF, 16'h0000, 1'b1);
+        run_test(16'hFFFF, 16'h0001, 1'b1);
+        run_test(16'hFFFF, 16'hFFFF, 1'b1);
+        run_test(16'hF0F0, 16'h0F0F, 1'b1);
+        run_test(16'hF000, 16'h000F, 1'b1);
+        run_test(16'hF00F, 16'hF00F, 1'b1);
+
         run_test(16'd12345, 16'd54321, 1'b1);
         run_test(16'd40000, 16'd25535, 1'b1);
 

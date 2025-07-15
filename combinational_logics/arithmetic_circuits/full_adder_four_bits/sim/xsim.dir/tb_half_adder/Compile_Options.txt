@@ -1,0 +1,1 @@
+"work.tb_half_adder" -s "tb_half_adder" -debug "typical" 

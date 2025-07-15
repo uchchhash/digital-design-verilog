@@ -11,7 +11,7 @@ module tb_adder_2op_8bit;
     int total_passed = 0;
     int total_failed = 0;
 
-    int NUM_RANDOM_TESTS = 2000;
+    int NUM_RANDOM_TESTS = 200000;
 
     // Instantiate DUT
     rca_2op_8bit DUT (
@@ -30,6 +30,13 @@ module tb_adder_2op_8bit;
         run_test(8'hFF, 8'h00, 1'b0);
         run_test(8'hFF, 8'h01, 1'b0);
         run_test(8'hFF, 8'hFF, 1'b0);
+        run_test(8'hF0, 8'h0F, 1'b0);
+        run_test(8'h00, 8'h00, 1'b1);
+        run_test(8'h01, 8'h01, 1'b1);
+        run_test(8'hFF, 8'h00, 1'b1);
+        run_test(8'hFF, 8'h01, 1'b1);
+        run_test(8'hFF, 8'hFF, 1'b1);
+        run_test(8'hF0, 8'h0F, 1'b1);
         run_test(8'd123, 8'd100, 1'b1);
         run_test(8'd200, 8'd55, 1'b1);
 
