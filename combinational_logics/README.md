@@ -4,194 +4,236 @@
 
 ## 📚 Table of Contents
 - [🎯 Overview](#🎯-overview)
-- [🔷 General Combinational Logic Blocks](#🔷-general-combinational-logic-blocks)
-  - [1️⃣ Logic Gates](#1️⃣-logic-gates)
+- [🔷 Combinational Logic Blocks](#🔷-combinational-logic-blocks)
+  - [1️⃣ Logic Gates & Minimization](#1️⃣-logic-gates--minimization)
   - [2️⃣ Arithmetic Circuits](#2️⃣-arithmetic-circuits)
   - [3️⃣ Multiplexers & Demultiplexers](#3️⃣-multiplexers--demultiplexers)
   - [4️⃣ Encoders & Decoders](#4️⃣-encoders--decoders)
   - [5️⃣ Code Converters](#5️⃣-code-converters)
-  - [6️⃣ Parity & Error Detection](#6️⃣-parity--error-detection)
-  - [7️⃣ Shifters & Rotators](#7️⃣-shifters--rotators)
-  - [8️⃣ Comparators & Detectors](#8️⃣-comparators--detectors)
-  - [9️⃣ ALU & Datapath Elements](#9️⃣-alu--datapath-elements)
-  - [🔟 Miscellaneous](#🔟-miscellaneous)
+  - [6️⃣ Shifters & Rotators](#6️⃣-shifters--rotators)
+  - [7️⃣ Comparators & Detectors](#7️⃣-comparators--detectors)
+  - [8️⃣ Parity, Error Detection & Cryptographic Primitives](#8️⃣-parity-error-detection--cryptographic-primitives)
+  - [9️⃣ ALU, Datapath](#9️⃣-alu-datapath)
+  - [🔟 Advanced Functional Blocks](#🔟-advanced-functional-blocks)
 
 ---
 
 ## 🎯 Overview
 
-✅ *Combinational logic circuits* have **no memory or state** — outputs depend only on current inputs.  
-✅ Each section includes theory topics and RTL implementations.  
+✅ *Combinational logic circuits* have **no memory or state** — outputs depend only on current inputs.
 
 ---
 
-## 🔷 General Combinational Logic Blocks
+## 🔷 Combinational Logic Blocks
 
-### 1️⃣ [Logic Gates](logic_gates/)
-- Theory: Signals & Digital Electronics Basics  
-- Theory: Boolean Algebra (Intro, Examples, Redundancy Theorem)  
-- Theory: SOP & POS Forms (SOP, POS, Examples, Canonical & Minimal Forms, Tricks)  
-- Theory: Positive/Negative Logic, Duality & Complementation  
-- Theory: Karnaugh Maps & Minimization (K-Maps, Implicants, Don’t Care, QM Method, 4-5 Variables, Max Terms)  
-- RTL:
-  - AND, OR, NOT
-  - NAND, NOR
-  - XOR, XNOR
-  - Universal gates (NAND/NOR only implementations)
-  - Logic obfuscation primitives (XOR/AND camouflaging — security)
+### 1️⃣ [Logic Gates & Minimization](logic_gates/)
+- **Theory:** Boolean Algebra, SOP/POS Forms, K-Maps, Duality, Positive/Negative Logic
+- **RTL:**
+  - Basic Logic Gates: AND, OR, NOT
+  - Universal Logic Gates: NAND, NOR
+  - Exclusive Logic Gates: XOR, XNOR
+  - Bitwise Operations: AND, OR, NOT, NAND, NOR, XOR, XNOR
+  - Bitwise Reduction Operators: AND-Reduce, OR-Reduce, XOR-Reduce
+  - Logic Obfuscation Primitives: XOR/AND camouflaging, Dummy Logic Gates
+  - Majority Gate
+  - Minority Gate
 
 ---
 
 ### 2️⃣ [Arithmetic Circuits](arithmetic_circuits/)
-- Theory: Binary Arithmetic (Addition, Subtraction, Multiplication, Division)  
-- Theory: Octal Arithmetic (Addition, Subtraction, Multiplication)  
-- Theory: Hexadecimal Arithmetic (Addition, Subtraction, Multiplication)  
-- Theory: Complements & Data Representations (r’s, (r-1)’s, 1’s, 2’s, signed magnitude)  
-- Theory: Binary Subtraction with Complements  
-- RTL:
-  - Half-adder
-  - Full-adder
-  - Ripple-carry adder (N-bit)
-  - Carry-lookahead adder
-  - Carry-save adder
-  - Parallel adder/subtractor with overflow detection
-  - Subtractor (Half, Full, Full using NAND/NOR, with DEMUX)
-  - Wallace tree multiplier
-  - Booth multiplier (signed)
-  - Array multiplier (combinational)
-  - Approximate adder (AI/ML)
-  - Approximate multiplier (AI/ML)
-  - In-memory adder (PIM)
-  - In-memory multiplier (PIM)
+- **Theory:** Binary, Octal, Hex Arithmetic; Complements
+- **RTL:**
+  - **Adders:**
+    - Half-Adder
+    - Full-Adder
+    - Ripple-Carry Adder (N-bit)
+    - Parallel Adder with Overflow Detection
+    - Carry-Skip Adder
+    - Carry-Select Adder
+    - Carry-Save Adder
+    - Prefix Adders
+    - Approximate Adder
+  - **Subtractors:**
+    - Half-Subtractor
+    - Full-Subtractor
+    - Ripple-Borrow Subtractor (N-bit)
+    - Adder-Subtractor Unit
+    - Carry-Lookahead Subtractor
+    - Approximate Subtractor
+  - **Multipliers:**
+    - 2×2 Multiplier
+    - 4×4 Multiplier
+    - Array Multiplier (Combinational)
+    - Parameterizable N×N Multiplier
+    - Booth Multiplier (Signed)
+    - Wallace Tree Multiplier
+    - Approximate Multiplier
+    - Shift-and-Add Multiplier
+    - Modified Booth (Radix-4) Multiplier
+    - Dadda Multiplier
+  - **Dividers:**
+    - Restoring Divider
+    - Non-Restoring Divider
+    - SRT Divider (Radix-2/4)
+    - Newton–Raphson or Goldschmidt
 
 ---
 
 ### 3️⃣ [Multiplexers & Demultiplexers](multiplexers_demultiplexers/)
-- Theory: Multiplexers (Intro, 4x1, 8x1, Trees, Boolean Function Realization, Full Adder with MUX, Expressions)  
-- Theory: Demultiplexers (1:2, 1:4, DEMUX as Decoder, Full Subtractor with DEMUX)  
-- RTL:
-  - 2:1 MUX
-  - 4:1 MUX
-  - 8:1 MUX
-  - N:1 hierarchical MUX
-  - 1:2 DEMUX
-  - 1:4 DEMUX
-  - DEMUX as decoder
-  - Crossbar switch (N×M)
-  - High-speed MUX tree (HPC)
+- **Theory:** MUX/DEMUX Operation, Boolean Realization
+- **RTL:**
+  - **MUX:**
+    - 2:1, 4:1, 8:1, 16:1 MUX
+    - N:1 Hierarchical MUX
+    - Tree-based MUX
+    - High-Speed MUX Tree
+    - Pipelined MUX
+    - Bus Multiplexer
+    - Crossbar Switch (N×M)
+    - Bidirectional Bus Switch
+  - **DEMUX:**
+    - 1:2, 1:4, 1:8, 1:16 DEMUX
+    - 1:N Parameterizable DEMUX
+    - DEMUX as Decoder
+    - One-Hot DEMUX
 
 ---
 
 ### 4️⃣ [Encoders & Decoders](encoders_decoders/)
-- Theory: Encoders & Decoders (Intro, Priority, Decimal→BCD, Octal→Binary, Hex→Binary, Full Adder with Decoder)  
-- Theory: Seven Segment Display Decoder  
-- RTL:
-  - 2:4 decoder
-  - 3:8 decoder
-  - 4:16 decoder
-  - Binary-to-one-hot decoder
-  - Binary-to-seven-segment decoder
-  - Thermometer-to-binary encoder
-  - Priority encoder
-  - Priority encoder with valid output
-  - Decimal-to-BCD encoder
-  - Octal-to-binary encoder
-  - Hex-to-binary encoder
-  - One-hot-to-binary converter
-  - Dummy-cell comparator (PIM)
+- **Theory:** Encoder/Decoder Operation, Seven-Segment, Priority Encoding
+- **RTL:**
+  - **Encoders:**
+    - 2:1, 4:2, 8:3, 16:4 Encoder
+    - N:log₂(N) Parameterizable Encoder
+    - Priority Encoder (4:2, 8:3, N:log₂N)
+    - Pipelined Priority Encoder
+    - One-Hot-to-Binary Converter
+    - Thermometer-to-Binary Encoder
+  - **Decoders:**
+    - 1:2, 2:4, 3:8, 4:16 Decoder
+    - N:2ᴺ Parameterizable Decoder
+    - Binary-to-One-Hot Decoder
+    - Binary-to-Seven-Segment Decoder
+    - Decoder with Enable
 
 ---
 
 ### 5️⃣ [Code Converters](code_converters/)
-- Theory: Code Systems & Conversions (BCD, Excess-3, 2421, Gray)  
-- Theory: BCD Operations (Addition, Binary↔BCD, Shift Add-3)  
-- Theory: Excess-3 Operations  
-- Theory: Gray Code Operations  
-- RTL:
-  - Binary to Gray
-  - Gray to Binary
-  - BCD to Binary
-  - Binary to BCD
-  - Excess-3 encoder/decoder
-  - 2’s complement converter
+- **Theory:** BCD, Excess-3, Gray Code
+- **RTL:**
+  - Binary-to-Gray Code Converter
+  - Gray-to-Binary Code Converter
+  - Binary-to-BCD Converter
+  - BCD-to-Binary Converter
+  - Excess-3-to-BCD Converter
+  - BCD-to-Excess-3 Converter
+  - Binary-to-Seven-Segment Code Converter
+  - BCD-to-Seven-Segment Code Converter
+  - Parity Generator & Parity Checker (Even/Odd)
+  - 2’s Complement Converter
 
 ---
 
-### 6️⃣ [Parity & Error Detection](parity_error_detection/)
-- Theory: Parity & Error Detection (Parity, Hamming Codes)  
-- RTL:
-  - Even parity generator
-  - Odd parity generator
-  - Parity checker
-  - Hamming code generator
-  - Hamming code checker
-  - CRC generator
-  - CRC checker
-  - S-Box (AES substitution box — security)
-  - P-Box (permutation box — security)
-  - AES round function components
-  - DES Feistel function
-  - Lightweight cipher components (PRESENT)
+### 6️⃣ [Shifters & Rotators](shifters_rotators/)
+- **Theory:** Logical vs Arithmetic Shifting
+- **RTL:**
+  - **Shifters:**
+    - Logical Left Shifter
+    - Logical Right Shifter
+    - Arithmetic Right Shifter
+    - Bidirectional Shifter
+    - Barrel Shifter
+    - Pipelined Shifter
+    - Dynamic Shifter
+  - **Rotators:**
+    - Rotate Left (aka Circular Left Rotator)
+    - Rotate Right (aka Circular Right Rotator)
+    - Bidirectional Rotator
+    - Barrel Rotator
+  - Leading Zero Counter (LZC)
+  - Trailing Zero Counter (TZC)
 
 ---
 
-### 7️⃣ [Shifters & Rotators](shifters_rotators/)
-- Theory: Logical vs arithmetic shifting, Rotations & barrel shifters  
-- RTL:
-  - Logical left shifter
-  - Logical right shifter
-  - Arithmetic right shifter
-  - Circular left rotator
-  - Circular right rotator
-  - Barrel shifter
-  - Dynamic shifter (variable shift amount)
-  - Leading zero counter
-  - Trailing zero counter
+### 7️⃣ [Comparators & Detectors](comparators_detectors/)
+- **Theory:** Magnitude Comparison, Priority Resolution, Window Detection, Overflow/Underflow Conditions, Voting Logic
+- **RTL:**
+  - **Comparators:**
+    - 1-bit, 2-bit, 4-bit, N-bit Magnitude Comparators
+    - Cascaded Comparator  
+    - Threshold Comparator
+    - Window Comparator
+  - **Detectors:**
+    - Equality/Inequality Detector
+    - Priority Detector
+    - Min/Max Detector
+    - Overflow/Underflow Detector
+    - Sign Detector
+    - Parity Detector (Even/Odd)
+    - Zero Detector
+    - Window Detector
+    - Edge Detector (Rising/Falling)
+  - **Priority Logic / Arbiters:**
+    - Fixed Priority Arbiter
+    - Arbiter (Priority Resolver)
+    - Priority Grant Logic
+  - **Majority Voter:**
+    - 3-input, 5-input, N-input Majority Voter
+    - Minority Voter
 
 ---
 
-### 8️⃣ [Comparators & Detectors](comparators_detectors/)
-- Theory: Comparators (1-bit, 2-bit)  
-- RTL:
-  - 1-bit comparator
-  - N-bit comparator
-  - Cascaded comparator
-  - Min/Max detector
-  - Threshold comparator
-  - Zero detector
-  - Bitline XOR, AND, Majority gates (PIM)
+### 8️⃣ [Parity, Error Detection & Cryptographic Primitives](parity_error_detection/)
+- **Theory:** Parity (Even/Odd), Hamming Codes, Cyclic Redundancy Check (CRC), S-Boxes & P-Boxes, Feistel Networks, Lightweight Block Ciphers
+- **RTL:**
+  - **Parity Circuits:**
+    - Even Parity Generator & Checker
+    - Odd Parity Generator & Checker
+  - **Error Detection/Correction:**
+    - Hamming Code Generator & Checker
+    - CRC (Cyclic Redundancy Check) Generator & Checker
+  - **Cryptographic Primitives:**
+    - AES Components:
+      - Substitution Box (S-Box)
+      - Permutation Box (P-Box)
+      - AES Round Function
+    - DES Feistel Function
+    - Lightweight Cipher Components (e.g., PRESENT Cipher)
+  - Bit Shuffler / Bit Permutation Logic
 
 ---
 
-### 9️⃣ [ALU & Datapath Elements](alu_datapath_elements/)
-- Theory: Arithmetic Logic Unit operations  
-- RTL:
-  - ALU:
-    - AND, OR, XOR, NOT
-    - ADD, SUB, INC, DEC
-    - SLT
-    - Zero/carry/overflow flags
-  - Dot-product unit (AI/ML)
-  - Multiply-accumulate (MAC) unit (AI/ML)
-  - Bit-serial MAC unit (AI/ML)
-  - Activation function approximators (ReLU, sigmoid, tanh)
-  - Quantizer, dequantizer
-  - Max pooling unit
-  - Normalization (approximate)
-  - Data duplication shuffler
-  - In-BRAM compute unit
+### 9️⃣ [ALU, Datapath](alu_datapath_elements/)
+- **Theory:** ALU Operations, Datapath Elements
+- **RTL:**
+  - Arithmetic Operations: Add, Subtract, Increment, Decrement
+  - Logic Operations: AND, OR, XOR, NOT, NAND, NOR
+  - Shifts & Rotates: Logical, Arithmetic, Circular
+  - Comparisons: Equality, Greater/Less, Min/Max
+  - Status Flags: Carry, Zero, Overflow, Sign, Parity
+  - Operation Select Logic
+  - Parameterizable ALU
+  - Pipelined ALU
 
 ---
 
-### 🔟 [Miscellaneous](miscellaneous/)
-- Theory: Switching Circuits & Practice Problems  
-- Theory: Combinational vs Sequential Circuits Comparison  
-- RTL:
-  - Priority logic (arbitration/grant)
-  - Priority arbiters
-  - Majority voter
-  - Bit-mask generator
-  - Ternary CAM (TCAM) match logic
-  - Packet header field extractor
+### 🔟 [Advanced Functional Blocks](advanced_blocks/)
+- **Theory:** Networking Logic, CAM Matchers, DSP Units, ML Inference Primitives
+- **RTL:**
+  - **Networking / Matching Logic:**
+    - Bit-Mask Generator
+    - Ternary CAM (TCAM) Match Logic
+    - Packet Header Field Extractor
+    - Data Duplication Shuffler
+  - **DSP / ML Acceleration:**
+    - Multiply-Accumulate (MAC) Unit
+    - Bit-Serial MAC Unit
+    - Activation Function Approximators:
+      - ReLU
+      - Sigmoid (Piecewise Linear or LUT-based)
+      - Tanh (Piecewise Linear or LUT-based)
+    - Quantizer / Dequantizer
+    - Max Pooling Unit
+    - Normalization (Approximate)
 
 ---
