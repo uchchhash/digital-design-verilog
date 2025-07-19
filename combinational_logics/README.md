@@ -61,16 +61,17 @@
     - Carry-Lookahead Subtractor
     - Approximate Subtractor
   - **Multipliers:**
-    - 2×2 Multiplier
-    - 4×4 Multiplier
-    - Array Multiplier (Combinational)
-    - Parameterizable N×N Multiplier
-    - Booth Multiplier (Signed)
-    - Wallace Tree Multiplier
-    - Approximate Multiplier
-    - Shift-and-Add Multiplier
-    - Modified Booth (Radix-4) Multiplier
-    - Dadda Multiplier
+    - 2×2 Multiplier                      # Smallest possible, easiest to grasp conceptually.
+    - 4×4 Multiplier                      # Next size up, same concept but more bits to organize.
+    - Shift-and-Add Multiplier            # Sequential method, shows trade-off between time and area.
+    - Array Multiplier (Combinational)    # Fully parallel, structured partial product matrix.
+    - Parameterizable N×N Multiplier      # Generalize Array for any N, good RTL design practice.
+    - Booth Multiplier (Signed)           # Handles signed numbers, reduces partial products.
+    - Modified Booth (Radix-4) Multiplier # More optimized Booth with fewer steps.
+    - Wallace Tree Multiplier             # Fast reduction tree, advanced parallel technique.
+    - Dadda Multiplier                    # Similar to Wallace but area-efficient.
+    - Approximate Multiplier              # Advanced, for power/speed/accuracy trade-offs.
+
   - **Dividers:**
     - Restoring Divider
     - Non-Restoring Divider
