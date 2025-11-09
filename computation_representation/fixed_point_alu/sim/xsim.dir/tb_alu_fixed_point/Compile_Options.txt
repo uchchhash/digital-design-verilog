@@ -1,0 +1,1 @@
+"work.tb_alu_fixed_point" -s "tb_alu_fixed_point" -debug "typical" 

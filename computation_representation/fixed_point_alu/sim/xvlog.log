@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/computation_representation/fixed_point_alu/design/alu_fixed_point.sv" into library work
+INFO: [VRFC 10-311] analyzing module alu_fixed_point
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/computation_representation/fixed_point_alu/tb/tb_alu_fixed_point.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_alu_fixed_point

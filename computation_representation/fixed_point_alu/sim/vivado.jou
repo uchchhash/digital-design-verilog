@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Jul 21 00:12:27 2025
+# Process ID         : 184350
+# Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/computation_representation/fixed_point_alu/sim
+# Command line       : vivado -mode batch -source work_alu_fixed_point_synth/alu_fixed_point_synth.tcl
+# Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/computation_representation/fixed_point_alu/sim/vivado.log
+# Journal file       : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/computation_representation/fixed_point_alu/sim/vivado.jou
+# Running On         : ucchash-pc
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3998.891 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25054 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 33644 MB
+# Available Virtual  : 20334 MB
+#-----------------------------------------------------------
+source work_alu_fixed_point_synth/alu_fixed_point_synth.tcl

@@ -1,0 +1,241 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near 'always_ff' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:110]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'always_ff' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:110]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+ERROR: [XSIM 43-3225] Cannot find design unit work.universal_counter in library work located at xsim.dir/work.
+ERROR: Please check the snapshot name which is created during 'xelab',the current snapshot name "xsim.dir/universal_counter/xsimk" does not exist 
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near ':' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:114]
+ERROR: [VRFC 10-4982] syntax error near ':' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:119]
+ERROR: [VRFC 10-8530] module 'universal_counter' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:95]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+ERROR: [XSIM 43-3225] Cannot find design unit work.universal_counter in library work located at xsim.dir/work.
+ERROR: Please check the snapshot name which is created during 'xelab',the current snapshot name "xsim.dir/universal_counter/xsimk" does not exist 
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:22:00 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:22:04 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near 'parameter' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:97]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'parameter' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:97]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:28:15 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:28:18 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near 'parameter' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:97]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'parameter' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:97]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:28:39 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:28:43 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near '[' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:117]
+ERROR: [VRFC 10-9037] illegal declaration without an explicit type name; assuming type 'logic' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:117]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:125]
+WARNING: [VRFC 10-3824] variable 'a' must explicitly be declared as automatic or static [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:129]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:130]
+WARNING: [VRFC 10-3824] variable 's' must explicitly be declared as automatic or static [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:132]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:133]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:146]
+ERROR: [VRFC 10-8530] module 'universal_counter' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:96]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:31:23 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:31:27 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+ERROR: [VRFC 10-4982] syntax error near '[' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:113]
+ERROR: [VRFC 10-9037] illegal declaration without an explicit type name; assuming type 'logic' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:113]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:120]
+WARNING: [VRFC 10-3824] variable 'a' must explicitly be declared as automatic or static [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:124]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:125]
+WARNING: [VRFC 10-3824] variable 's' must explicitly be declared as automatic or static [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:127]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:128]
+ERROR: [VRFC 10-2989] 'P2_MASK' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:141]
+ERROR: [VRFC 10-8530] module 'universal_counter' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv:96]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:32:55 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:32:59 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/sequential_logics/counters/universal_counter.sv" into library work
+INFO: [VRFC 10-311] analyzing module universal_counter
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.universal_counter -s universal_counter -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.universal_counter
+Built simulation snapshot universal_counter
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 18:38:31 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/universal_counter/xsim_script.tcl
+# xsim {universal_counter} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 18:38:35 2025...

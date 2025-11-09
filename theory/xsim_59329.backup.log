@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  9 16:30:57 2025
+# Process ID         : 59329
+# Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory
+# Command line       : xsim -mode tcl -source {xsim.dir/case_demo/xsim_script.tcl}
+# Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/xsim.log
+# Journal file       : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/xsim.jou
+# Running On         : ucchash-pc
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3900.062 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25056 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 33646 MB
+# Available Virtual  : 21727 MB
+#-----------------------------------------------------------
+source xsim.dir/case_demo/xsim_script.tcl
+# xsim {case_demo} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                time | sel | case  casez casex  unique  prior  uniq0
+                   0 | 000 |  a0     b0     c0     d0     ef     f0
+                5000 | 001 |  a1     b1     c1     df     ef     f1
+               10000 | 010 |  a2     b0     c0     df     ef     f2
+               15000 | 0x1 |  ff     b1     c1     df     ef     fe
+               20000 | 0z1 |  ff     b1     c1     df     e1     fe
+               25000 | 111 |  ff     bf     cf     df     ef     fe
+$finish called at time : 30 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/case_statements.sv" Line 46
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 16:31:00 2025...

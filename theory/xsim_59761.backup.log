@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  9 16:31:34 2025
+# Process ID         : 59761
+# Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory
+# Command line       : xsim -mode tcl -source {xsim.dir/case_demo/xsim_script.tcl}
+# Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/xsim.log
+# Journal file       : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/xsim.jou
+# Running On         : ucchash-pc
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+# CPU Frequency      : 3900.044 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 25056 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 33646 MB
+# Available Virtual  : 21705 MB
+#-----------------------------------------------------------
+source xsim.dir/case_demo/xsim_script.tcl
+# xsim {case_demo} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                time | sel | case  casez casex  unique  prior  uniq0
+                   0 | 000 |  10100000     10110000     11000000     11010000     11101111     11110000
+                5000 | 001 |  10100001     10110001     11000001     11011111     11101111     11110001
+               10000 | 010 |  10100010     10110000     11000000     11011111     11101111     11110010
+               15000 | 0x1 |  11111111     10110001     11000001     11011111     11101111     11111110
+               20000 | 0z1 |  11111111     10110001     11000001     11011111     11100001     11111110
+               25000 | 111 |  11111111     10111111     11001111     11011111     11101111     11111110
+$finish called at time : 30 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/theory/case_statements.sv" Line 46
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 16:31:38 2025...

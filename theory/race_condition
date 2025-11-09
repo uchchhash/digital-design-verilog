@@ -1,0 +1,81 @@
+// Questions
+// What are the two possible simulation outcomes for a and b after the first rising edge of clk?
+// (Hint: depends on which block executes first.)
+// What is the real hardware behavior expected from equivalent flip-flops?
+// What will c evaluate to in simulation vs hardware?
+// How would you modify the code so that simulation and hardware match perfectly?
+// Why should you always use non-blocking (<=) assignments in sequential (posedge clk) logic?
+
+
+module race_test;
+  logic clk;
+  logic a, b, c;
+
+  initial begin
+    clk = 0;
+    a = 1; 
+    b = 0;
+    c = 0;
+    forever #5 clk = ~clk;
+  end
+
+  // Two clocked blocks using blocking assignments
+  always @(posedge clk)
+    a = b;
+
+  always @(posedge clk)
+    b = a;
+
+  // A third block depending on a and b
+  always @(posedge clk)
+    c = a & b;
+
+  initial begin
+    #1;
+    repeat (2) @(posedge clk);
+    $display("At time %0t : a=%0b b=%0b c=%0b", $time, a, b, c);
+    $finish;
+  end
+endmodule
+
+
+// What are the two possible simulation outcomes for a and b after the first rising edge of clk?
+// depends on which always block executes first:
+// 1) If the first block (a = b) executes first:
+//    - a takes the value of b (0)  
+//    - Then the second block (b = a) executes, and b takes the value of a (which is now 0)
+//    - Result: a=0, b=0
+// 2) If the second block (b = a) executes first:
+//    - b takes the value of a (1)  
+//    - Then the first block (a = b) executes, and a takes the value of b (which is now 1)
+//    - Result: a=1, b=1    
+
+
+// What is the real hardware behavior expected from equivalent flip-flops?
+// In real hardware, both flip-flops would sample their inputs simultaneously at the clock edge.
+// Therefore, a would take the initial value of b (0) and b would take the initial value of a (1).
+// Result: a=0, b=1  
+
+// What will c evaluate to in simulation vs hardware?
+// In simulation, c could evaluate to either 0 or 1 depending on the order of execution of the always blocks.
+// In hardware, c would evaluate to 0 since a=0 and b=1, so c = a & b = 0 & 1 = 0. 
+
+
+// How would you modify the code so that simulation and hardware match perfectly?
+// To ensure that simulation and hardware match, use non-blocking assignments (<=) in the clocked always blocks:
+/*
+  always @(posedge clk)
+    a <= b;
+  always @(posedge clk)    
+    b <= a;
+*/
+
+// Why should you always use non-blocking (<=) assignments in sequential (posedge clk) logic?
+// Non-blocking assignments ensure that all right-hand side values are evaluated before any left-hand side updates occur.
+// This mimics the behavior of real flip-flops in hardware, where all flip-flops sample their inputs simultaneously at the clock edge.
+// It prevents race conditions and ensures predictable and consistent behavior between simulation and hardware.
+
+
+
+
+

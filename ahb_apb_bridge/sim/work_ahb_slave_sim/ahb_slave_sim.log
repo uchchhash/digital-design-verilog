@@ -1,0 +1,406 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave_fsm
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+ERROR: [XSIM 43-3225] Cannot find design unit work.ahb_slave in library work located at xsim.dir/work.
+ERROR: Please check the snapshot name which is created during 'xelab',the current snapshot name "xsim.dir/ahb_slave/xsimk" does not exist 
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 22:22:04 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+WARNING: 0ns : none of the conditions were true for unique case from File:/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:114
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 22:22:07 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-311] analyzing module ahb_fsm_nofifo
+ERROR: [VRFC 10-3195] cannot open include file 'define.sv' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:149]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:189]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:192]
+ERROR: [VRFC 10-2989] 'SINGLE' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:193]
+ERROR: [VRFC 10-2989] 'INCR4' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:197]
+ERROR: [VRFC 10-2989] 'INCR8' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:198]
+ERROR: [VRFC 10-2989] 'INCR16' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:199]
+ERROR: [VRFC 10-2989] 'SINGLE' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:200]
+ERROR: [VRFC 10-2989] 'WRAP4' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:201]
+ERROR: [VRFC 10-2989] 'WRAP8' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:202]
+ERROR: [VRFC 10-2989] 'WRAP16' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:203]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:204]
+ERROR: [VRFC 10-2989] 'SEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:232]
+ERROR: [VRFC 10-2989] 'SEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:265]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:333]
+ERROR: [VRFC 10-2989] 'SEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:334]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:372]
+ERROR: [VRFC 10-2989] 'SEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:373]
+ERROR: [VRFC 10-2989] 'NSEQ' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:427]
+INFO: [VRFC 10-10021] Sorry, too many errors..
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 23:15:25 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+WARNING: 0ns : none of the conditions were true for unique case from File:/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:114
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 23:15:28 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 23:15:48 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 23:15:52 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 23:36:49 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  9 23:36:53 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+ERROR: [VRFC 10-4982] syntax error near 'unique' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:154]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'unique' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:154]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:155]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:157]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:159]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:161]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:163]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:165]
+ERROR: [VRFC 10-4982] syntax error near 'end' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:168]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'end' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:168]
+ERROR: [VRFC 10-3516] mismatch in closing label 'hread_valid_state'; expected 'HREAD_VALID_STATE' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:167]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:169]
+ERROR: [VRFC 10-1390] statement label and block identifier are not allowed together [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:171]
+ERROR: [VRFC 10-4982] syntax error near 'endcase' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:174]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'endcase' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:174]
+ERROR: [VRFC 10-8530] module 'ahb_slave' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:6]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 01:13:47 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 01:13:51 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 01:15:49 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 01:15:53 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+ERROR: [VRFC 10-2989] 'Initial_burst_count' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:166]
+ERROR: [VRFC 10-8530] module 'ahb_slave' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:6]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 01:45:09 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 01:45:13 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 01:46:23 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 01:46:27 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+ERROR: [VRFC 10-2989] 'is_fixed_burst' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:163]
+ERROR: [VRFC 10-8530] module 'ahb_slave' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:6]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 02:02:36 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 02:02:40 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 02:47:34 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 02:47:38 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.ahb_slave -s ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave
+Built simulation snapshot ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Nov 10 02:50:18 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ahb_slave/xsim_script.tcl
+# xsim {ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Nov 10 02:50:22 2025...

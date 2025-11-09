@@ -1,0 +1,1 @@
+"work.universal_shift_register" -s "universal_shift_register" -debug "typical" 

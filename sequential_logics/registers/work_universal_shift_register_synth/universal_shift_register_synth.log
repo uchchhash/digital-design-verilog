@@ -1,0 +1,15 @@
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  9 17:25:42 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source work_universal_shift_register_synth/universal_shift_register_synth.tcl
+# synth_design -top universal_shift_register -part xc7a12tcpg238-3
+Command: synth_design -top universal_shift_register -part xc7a12tcpg238-3
+0 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  9 17:25:44 2025...

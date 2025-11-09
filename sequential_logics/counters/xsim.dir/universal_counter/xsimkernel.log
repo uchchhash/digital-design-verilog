@@ -1,0 +1,7 @@
+Running: xsim.dir/universal_counter/xsimk -runall -simmode gui -wdb universal_counter.wdb -simrunnum 0 -socket 48277
+Design successfully loaded
+Design Loading Memory Usage: 175948 KB (Peak: 176004 KB)
+Design Loading CPU Usage: 1240 ms
+Simulation completed
+Simulation Memory Usage: 257684 KB (Peak: 315216 KB)
+Simulation CPU Usage: 1240 ms

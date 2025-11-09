@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_alu_fixed_point/xsimk -runall -simmode gui -wdb tb_alu_fixed_point.wdb -simrunnum 0 -socket 55113
+Design successfully loaded
+Design Loading Memory Usage: 178612 KB (Peak: 178668 KB)
+Design Loading CPU Usage: 1210 ms
+Simulation completed
+Simulation Memory Usage: 273160 KB (Peak: 317880 KB)
+Simulation CPU Usage: 1230 ms
