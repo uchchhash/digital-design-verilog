@@ -1,36 +1,9 @@
 `timescale 1ns/1ps
-// -----------------------------------------------------------------------------
-// AHB-Lite Slave (front half) — PRE-NSL ONLY
-//
-// This unit implements everything up to (but not including) the Next-State Logic
-// (NSL) and Output/Data Logic (OL). The design follows the AHB-Lite timing rule
-// that the slave which completed the previous address phase *owns* the current
-// data phase and is the only entity allowed to stretch HREADY.
-//
-// What’s included:
-//  • Parameters, ports, bus encodings
-//  • FSM state flops (NSL will be added later)
-//  • Burst helpers + latched reservation (captured on accepted NONSEQ)
-//  • AHB accept qualifiers (accept / nseq_accept / seq_accept)
-//  • Data-phase ownership (selected_d) + address-phase capture (a_d)
-//  • Legal HREADYOUT gating template (only data-owner may stall the bus)
-//  • Datapath scaffolding to FIFOs (ctrl_pipe, ahb_data_pipe); enables held low
-//
-// What’s purposely not included yet:
-//  • NSL (case on pstate -> nstate transitions)
-//  • Output/Data Logic (pulsing ctrl_wen/ahb_data_wen/apb_data_ren,
-//    HRDATA muxing, backpressure gating beyond placeholders, HRESP errors)
-//
-// Integration strategy:
-//  1) Write NSL to move through *_ADDR/_WAIT/_DATA/_VALID states using
-//     addr_accept/nseq_accept/seq_accept and the space/data-ready checks below.
-//  2) In OL, only the data-phase owner (selected_d==1) may deassert HREADYOUT.
-//     All stalls must be gated by selected_d.
-// -----------------------------------------------------------------------------
+
 module ahb_slave #(
   parameter int haddrWidth = 8,
   parameter int hdataWidth = 32,
-  parameter int hFifoDepth = 8,
+  parameter int hFifoDepth = 16,
   // ctrl_pipe payload packed as: {HWRITE, HTRANS, HBURST, HSIZE, HADDR}
   parameter int CTRL_W = 1 + 2 + 3 + 3 + haddrWidth
 )(
@@ -39,11 +12,11 @@ module ahb_slave #(
   input  logic                  HRESETn,
 
   // AHB-Lite handshake:
-  //  • HREADYin==1 means the *previous* data phase completed this cycle, so the
+  //  • HREADYIN==1 means the *previous* data phase completed this cycle, so the
   //    current address/control on the bus (if valid) can be *accepted* now.
   //  • HREADYOUT contributes to the global HREADY. Only the data-phase owner may
   //    drive it low to insert wait states.
-  input  logic                  HREADYin,
+  input  logic                  HREADYIN,
 
   // Address/control phase signals (driven by master during addr phase):
   input  logic                  HSEL,         // this slave is selected (addr phase)
@@ -62,26 +35,44 @@ module ahb_slave #(
   output logic                  HRESP,        // 0=OKAY, 1=ERROR (kept OKAY here)
   output logic                  HREADYOUT,    // this slave’s contribution to HREADY
 
-  // ========================== Bridge Side Signals ========================
-  // These signals connect to the internal bridge FIFOs (e.g., AHB→APB bridge).
-  // Enables are asserted in Output/Data Logic (not here).
-  output logic                  ctrl_wen,       // push control (addr-phase accepted)
-  output logic                  ahb_data_wen,   // push write data (data-phase)
-  output logic                  apb_data_ren,   // pop read data (to drive HRDATA)
+  // ===========================================================================
+  // Bridge-Side Interface — FIFO Connectivity (AHB ⇄ APB Domain Crossing)
+  //
+  //  Three independent FIFOs are used to decouple clock domains:
+  //   • Control FIFO : carries address/control info  → AHB-to-APB
+  //   • AHB-Data FIFO: carries write-data payloads  → AHB-to-APB
+  //   • APB-Data FIFO: carries read-data payloads   → APB-to-AHB
+  //
+  //  Each FIFO has its own handshake flags:
+  //   • full / space  → backpressure for AHB side
+  //   • empty         → data-availability for APB side
+  //
+  //  Note: enable pulses (wen/ren) are driven in Output/Data Logic (OL).
+  // ===========================================================================
 
-  // FIFO status (used to decide when to accept/continue bursts and when to stall):
-  input  logic                  ctrl_full,
-  input  logic                  ahb_data_full,
-  input  logic                  apb_data_empty,
+  // ---------------------- FIFO Control Signals (to FIFOs) --------------------
+  output logic                  ctrl_wen,       // Control-FIFO:  push command (addr phase accepted)
+  output logic                  ahb_data_wen,   // AHB-Data-FIFO: push write-data (data phase complete)
+  output logic                  apb_data_ren,   // APB-Data-FIFO: pop read-data  (to drive HRDATA)
 
-  // FIFO space indicators: these are depth+1 wide to represent 0..depth precisely
-  input  logic [$clog2(hFifoDepth):0] ctrl_sp,
-  input  logic [$clog2(hFifoDepth):0] ahb_data_sp,
+  // ---------------------- FIFO Status / Backpressure ------------------------
+  input  logic                  ctrl_full,      // Control-FIFO:  full → stall new address acceptance
+  input  logic                  ahb_data_full,  // AHB-Data-FIFO: full → stall write-data phase
+  input  logic                  apb_data_empty, // APB-Data-FIFO: empty → stall read until data ready
 
-  // FIFO datapaths (wired here, enables will be driven later in OL):
-  output logic [CTRL_W-1:0]     ctrl_pipe,      // {HWRITE,HTRANS,HBURST,HSIZE,HADDR}
-  output logic [hdataWidth-1:0] ahb_data_pipe,  // write data payload
-  input  logic [hdataWidth-1:0] apb_data_read   // read data payload
+  // ---------------------- FIFO Space Indicators -----------------------------
+  //  • Each count is (depth+1) bits wide (0..depth)
+  //  • Used by NSL to check fixed-burst reservation and per-beat acceptance.
+  input  logic [$clog2(hFifoDepth):0] ctrl_sp,      // available space in Control FIFO
+  input  logic [$clog2(hFifoDepth):0] ahb_data_sp,  // available space in AHB-Data FIFO
+
+  // ---------------------- FIFO Datapath Payloads ----------------------------
+  //  • These carry actual data/control words between AHB and APB domains.
+  //  • OL will assert enables to push/pop when protocol handshakes complete.
+  output logic [CTRL_W-1:0]     ctrl_pipe,      // Control-FIFO payload: {HWRITE,HTRANS,HBURST,HSIZE,HADDR}
+  output logic [hdataWidth-1:0] ahb_data_pipe,  // AHB-Data-FIFO payload: write-data word
+  input  logic [hdataWidth-1:0] apb_data_read   // APB-Data-FIFO payload: read-data word (to HRDATA)
+
 );
 
   // ===========================================================================
@@ -90,48 +81,47 @@ module ahb_slave #(
   //  • BUSY/IDLE (HTRANS[1]==0) must not be “accepted” or advance internal
   //    counters / FIFOs.
   // ===========================================================================
-  localparam logic [1:0] HTRANS_IDLE  = 2'b00;
-  localparam logic [1:0] HTRANS_BUSY  = 2'b01;
-  localparam logic [1:0] HTRANS_NSEQ  = 2'b10; // start of burst
-  localparam logic [1:0] HTRANS_SEQ   = 2'b11; // continuation
+  localparam logic [1:0] IDLE   = 2'b00;
+  localparam logic [1:0] BUSY   = 2'b01;
+  localparam logic [1:0] NONSEQ = 2'b10; // start of burst
+  localparam logic [1:0] SEQ    = 2'b11; // continuation
 
-  localparam logic [2:0] HBURST_SINGLE = 3'b000; // 1 beat
-  localparam logic [2:0] HBURST_INCR   = 3'b001; // unbounded (length unknown)
-  localparam logic [2:0] HBURST_WRAP4  = 3'b010;
-  localparam logic [2:0] HBURST_INCR4  = 3'b011;
-  localparam logic [2:0] HBURST_WRAP8  = 3'b100;
-  localparam logic [2:0] HBURST_INCR8  = 3'b101;
-  localparam logic [2:0] HBURST_WRAP16 = 3'b110;
-  localparam logic [2:0] HBURST_INCR16 = 3'b111;
+  localparam logic [2:0] SINGLE = 3'b000; // 1 beat
+  localparam logic [2:0] INCR   = 3'b001; // unbounded (length unknown)
+  localparam logic [2:0] WRAP4  = 3'b010;
+  localparam logic [2:0] INCR4  = 3'b011;
+  localparam logic [2:0] WRAP8  = 3'b100;
+  localparam logic [2:0] INCR8  = 3'b101;
+  localparam logic [2:0] WRAP16 = 3'b110;
+  localparam logic [2:0] INCR16 = 3'b111;
 
   // ===========================================================================
   // FSM States (address/data split across states) — NSL will be added later
   //  • Keep states fine-grained so OL can cleanly pulse enables and gate stalls.
   // ===========================================================================
   typedef enum logic [3:0] {
-    HIDLE_STATE,        // Idle/park
-    HNSEQ_WAIT_STATE,   // Waiting to begin a new NONSEQ (addr accepted)
+    IDLE_STATE,              // No active transaction. Waiting for a valid transfer start from the AHB master.
+    NONSEQ_WAIT_STATE,       // Waiting to begin a new NONSEQ (addr accepted)
 
     // Write path
-    HWRITE_ADDR_STATE,  // Accept a write address/control beat (push to ctrl FIFO)
-    HWRITE_WAIT_STATE,  // Wait for ctrl FIFO space before starting/continuing write burst
-    HWRITE_DATA_STATE,  // Consume a write data beat (push to write-data FIFO)
+    WRITE_ADDR_WAIT_STATE,   // Wait for ctrl FIFO space before starting/continuing write burst 
+    WRITE_ADDR_VALID_STATE,  // Accept a write address/control beat. Push {HWRITE,HTRANS,HBURST,HSIZE,HADDR} into Control FIFO.
+    WRITE_DATA_VALID_STATE,  // Consume one write data beat (HWDATA). Push it into AHB Data FIFO.
 
     // Read path
-    HREAD_ADDR_STATE,   // Accept a read address/control beat (push to ctrl FIFO)
-    HREAD_WAIT_STATE,   // Wait for read data to become available
-    HREAD_VALID_STATE,  // Present read data (drive HRDATA, possibly complete data phase)
-    HREAD_HOLD_STATE    // Optional hold/pipeline staging (rarely needed)
+    READ_ADDR_WAIT_STATE,    // A read transfer is pending, but the Control FIFO is full. Slave must wait before accepting the address.
+    READ_ADDR_VALID_STATE,   // Accept a read address/control beat (push into Control FIFO).
+    READ_DATA_WAIT_STATE,    // Read data is not yet available from APB domain (apb_data_empty=1).
+    READ_DATA_VALID_STATE    // Read data is now valid. Drive HRDATA from apb_data_read and assert HREADYOUT=1 to complete data phase.
   } hstate_t;
 
   hstate_t pstate, nstate;
 
   // --------------------------
-  // State flops (no NSL yet)
-  //  • NSL will compute nstate; we simply register it here.
+  // State flops for FSM
   // --------------------------
   always_ff @(posedge HCLK or negedge HRESETn) begin
-    if (!HRESETn) pstate <= HIDLE_STATE;
+    if (!HRESETn) pstate <= IDLE_STATE;
     else          pstate <= nstate;
   end
 
@@ -143,45 +133,32 @@ module ahb_slave #(
   // ===========================================================================
   function automatic int unsigned burst_len (input logic [2:0] b);
     unique case (b)
-      HBURST_SINGLE:                 burst_len = 1;
-      HBURST_INCR4,  HBURST_WRAP4:   burst_len = 4;
-      HBURST_INCR8,  HBURST_WRAP8:   burst_len = 8;
-      HBURST_INCR16, HBURST_WRAP16:  burst_len = 16;
-      default:                       burst_len = 0; // INCR or invalid
+      SINGLE:          burst_len = 1;
+      INCR4,  WRAP4:   burst_len = 4;
+      INCR8,  WRAP8:   burst_len = 8;
+      INCR16, WRAP16:  burst_len = 16;
+      default:         burst_len = 0; // INCR or invalid
     endcase
   endfunction
 
   // ===========================================================================
   // AHB accept qualifiers (addr phase)
-  //  • addr_valid : NSEQ/SEQ is on the bus this cycle (independent of HREADYin)
-  //  • accept     : a valid beat is *accepted* (requires HREADYin==1)
+  //  • addr_valid  : NSEQ/SEQ is on the bus this cycle (independent of HREADYIN)
+  //  • addr_accept : a valid beat is *accepted* (requires HREADYIN==1)
   //  • nseq_accept/seq_accept : specific accepted type (start/continue)
-  //  • OL will pulse ctrl_wen off addr_accept; NSL will use nseq/seq to advance.
   // ===========================================================================
-  wire addr_valid  = HSEL && HTRANS[1];      // NSEQ/SEQ present (not IDLE/BUSY)
-  logic accept, nseq_accept, seq_accept;
-  assign accept      = addr_valid && HREADYin;            // accepted this cycle
-  assign nseq_accept = accept && (HTRANS == HTRANS_NSEQ); // start of burst
-  assign seq_accept  = accept && (HTRANS == HTRANS_SEQ);  // continuation
+  logic addr_valid, addr_accept, nseq_accept, seq_accept;
+  assign addr_valid  = HSEL && HTRANS[1];                 // NSEQ/SEQ present (not IDLE/BUSY)
+  assign addr_accept = addr_valid && HREADYIN;            // accepted this addr/ctrl cycle
+  assign nseq_accept = addr_accept && (HTRANS == NONSEQ); // start of burst
+  assign seq_accept  = addr_accept && (HTRANS == SEQ);    // continuation
 
-  // ===========================================================================
-  // Data-phase ownership (selected_d)
-  //  • AHB-Lite rule: Only the slave that completed the previous address phase
-  //    (i.e., when HREADYin==1) owns the *current* data phase and may stall.
-  //  • We latch HSEL on address-phase completion to know if we own the data phase.
-  // ===========================================================================
+  // ============================================================================
+  // Data-phase ownership & address-phase capture
+  //  • selected_d : remembers if this slave owns the *current* data phase
+  //  • a_d        : attributes of the accepted address-phase transfer
+  // ============================================================================
   logic selected_d;
-  always_ff @(posedge HCLK or negedge HRESETn) begin
-    if (!HRESETn) selected_d <= 1'b0;
-    else if (HREADYin) selected_d <= HSEL; // latch data-phase owner each cycle
-  end
-
-  // ===========================================================================
-  // Address-phase capture for the upcoming data phase (a_d)
-  //  • Capture the fields you need to time-align HRESP, byte-enables, and
-  //    per-beat attributes in the *data* phase (one cycle later).
-  //  • Captured only when address phase completes (HREADYin==1).
-  // ===========================================================================
   typedef struct packed {
     logic                   write;
     logic [2:0]             size;
@@ -189,19 +166,66 @@ module ahb_slave #(
     logic [1:0]             trans;
     logic [haddrWidth-1:0]  addr;
   } aphase_t;
-
   aphase_t a_d;
+
+  // -----------------------------------------------------------------------------
+  // Data-phase ownership & address-phase capture
+  //  • selected_d : remembers if this slave owns the *current* data phase
+  //  • a_d        : attributes of the accepted address-phase transfer
+  // -----------------------------------------------------------------------------
   always_ff @(posedge HCLK or negedge HRESETn) begin
     if (!HRESETn) begin
-      a_d <= '0;
-    end else if (HREADYin && HSEL) begin
-      a_d.write <= HWRITE;
-      a_d.size  <= HSIZE;
-      a_d.burst <= HBURST;
-      a_d.trans <= HTRANS;
-      a_d.addr  <= HADDR;
+      selected_d <= 1'b0;
+      a_d        <= '0;
+    end else begin
+      // 1. Latch new owner when an address phase completes (accepted)
+      if (addr_accept)
+        selected_d <= 1'b1;
+
+      // 2. Drop ownership only when the data beat completes
+      if (selected_d && HREADYIN &&
+          (pstate == WRITE_DATA_VALID_STATE || pstate == READ_DATA_VALID_STATE))
+        selected_d <= 1'b0;
+
+      // 3. Capture address/control info only on accepted address
+      if (addr_accept) begin
+        a_d.write <= HWRITE;
+        a_d.size  <= HSIZE;
+        a_d.burst <= HBURST;
+        a_d.trans <= HTRANS;
+        a_d.addr  <= HADDR;
+      end
     end
   end
+
+
+// // Replace your selected_d always_ff with this:
+// always_ff @(posedge HCLK or negedge HRESETn) begin
+//   if (!HRESETn) begin
+//     selected_d <= 1'b0;
+//     a_d        <= '0;
+//   end else begin
+//     // 1) Latch a new owner when an address is accepted
+//     if (addr_accept) selected_d <= 1'b1;
+
+//     // 2) Drop ownership only when the DATA phase actually completes
+//     if (selected_d && HREADYIN &&
+//         (pstate == WRITE_DATA_VALID_STATE || pstate == READ_DATA_VALID_STATE))
+//       selected_d <= 1'b0;
+
+//     // aphase capture (unchanged)
+//     if (addr_accept) begin
+//       a_d.write <= HWRITE;
+//       a_d.size  <= HSIZE;
+//       a_d.burst <= HBURST;
+//       a_d.trans <= HTRANS;
+//       a_d.addr  <= HADDR;
+//     end
+//   end
+// end
+
+
+
 
   // ===========================================================================
   // Latched reservation on NONSEQ (burst start)
@@ -210,17 +234,17 @@ module ahb_slave #(
   //    per-beat checks and allow stalls in our own data phase if needed.
   // ===========================================================================
   logic [4:0] burst_need_q;  // 0,1,4,8,16 (0 means INCR/unbounded)
-  logic       is_fixed_burst_d;
+  logic       is_fixed_burst_q;
 
   always_ff @(posedge HCLK or negedge HRESETn) begin
     if (!HRESETn) begin
       burst_need_q      <= '0;
-      is_fixed_burst_d  <= 1'b0;
+      is_fixed_burst_q  <= 1'b0;
     end else if (nseq_accept) begin
       burst_need_q      <= burst_len(HBURST);
-      is_fixed_burst_d  <= (HBURST == HBURST_INCR4)  || (HBURST == HBURST_WRAP4)  ||
-                           (HBURST == HBURST_INCR8)  || (HBURST == HBURST_WRAP8)  ||
-                           (HBURST == HBURST_INCR16) || (HBURST == HBURST_WRAP16);
+      is_fixed_burst_q  <= (HBURST == SINGLE) || (HBURST == INCR4)  || (HBURST == WRAP4)  ||
+                           (HBURST == INCR8)  || (HBURST == WRAP8)  ||
+                           (HBURST == INCR16) || (HBURST == WRAP16);
     end
   end
 
@@ -233,40 +257,44 @@ module ahb_slave #(
   logic have_ctrl_space_now;
   logic have_ctrl_space_for_burst;
   logic have_ctrl_space_needed;
+  logic need_full_this_beat;
 
   assign have_ctrl_space_now       = !ctrl_full;
-  assign have_ctrl_space_for_burst = (ctrl_sp >= burst_need_q);
-  assign have_ctrl_space_needed    = is_fixed_burst_d ? have_ctrl_space_for_burst
-                                                      : have_ctrl_space_now;
+  assign have_ctrl_space_for_burst = (ctrl_sp >= $unsigned(burst_need_q));
+  assign need_full_this_beat       = nseq_accept && is_fixed_burst_q;
+  assign have_ctrl_space_needed    = need_full_this_beat ? have_ctrl_space_for_burst
+                                                         : have_ctrl_space_now;
 
   // ===========================================================================
-  // Default responses and legal HREADYOUT gating
-  //
-  // HRESP:
-  //  • Kept at OKAY here. You will likely add alignment/size checks in OL
-  //    based on a_d.* so that HRESP is driven in the correct *data* phase.
-  //
-  // HREADYOUT:
-  //  • Only the *data-phase owner* (selected_d==1) may drive HREADYOUT low.
-  //  • If selected_d==0, this slave must drive HREADYOUT==1 (cannot stall).
-  //  • We expose “candidate” stall causes; OL will flesh out stall_write_dp /
-  //    stall_read_dp to include FIFO backpressure and data-availability.
+  // Default responses HRESP :
+  // HRESP: Kept at Okay by Default
   // ===========================================================================
   assign HRESP = 1'b0;
 
-  // Candidate: stall during address states when ctrl FIFO is full.
-  // NOTE: This condition is *only applied legally* via selected_d gating below.
-  wire stall_addr_ctrl = ((pstate==HWRITE_ADDR_STATE) || (pstate==HREAD_ADDR_STATE)) && ctrl_full;
 
-  // Placeholders for data-path backpressure (to be completed in OL):
-  //  • Writes: stall when you are about to accept/complete a write data phase
-  //    but write-data FIFO is full.
-  //  • Reads : stall until read data is available (apb_data_empty deasserts).
-  wire stall_write_dp = 1'b0; // e.g., (pstate==HWRITE_DATA_STATE) && ahb_data_full
-  wire stall_read_dp  = 1'b0; // e.g., (pstate==HREAD_WAIT_STATE)  && apb_data_empty
+  // ===========================================================================
+  // HREADYOUT:
+  //  • Only the *data-phase owner* (selected_d==1) may drive HREADYOUT low.
+  //  • If selected_d==0, this slave must drive HREADYOUT==1 (cannot stall).
+  // ===========================================================================
+  logic stall_addr_ctrl; // Stall during address states when ctrl FIFO is full.
+  logic stall_write_dp;  // write data path backpressure, write-data FIFO full 
+  logic stall_read_dp;   // read data availability, APB hasn’t produced data yet
+  logic stall_wait;      // Simple wait-state states
 
-  // Simple wait-state states (NSL will place you here when space/data is lacking)
-  wire stall_wait = (pstate==HWRITE_WAIT_STATE) || (pstate==HREAD_WAIT_STATE);
+  assign stall_addr_ctrl = ((pstate==WRITE_ADDR_VALID_STATE) || 
+                            (pstate==READ_ADDR_VALID_STATE)) && ctrl_full;
+
+  assign stall_wait = ((pstate == WRITE_ADDR_WAIT_STATE) ||
+                       (pstate == READ_ADDR_WAIT_STATE)  ||
+                       (pstate == READ_DATA_WAIT_STATE));
+
+  assign stall_write_dp = (pstate == WRITE_DATA_VALID_STATE) &&
+                          selected_d && ahb_data_full;
+
+  assign stall_read_dp  = ((pstate == READ_DATA_WAIT_STATE) ||
+                          (pstate == READ_DATA_VALID_STATE)) &&
+                          selected_d && apb_data_empty;
 
   // Legal gating:
   //  • During reset      → ready
@@ -275,48 +303,229 @@ module ahb_slave #(
   assign HREADYOUT = !HRESETn ? 1'b1
                     : (!selected_d) ? 1'b1
                     : !(stall_addr_ctrl || stall_wait || stall_write_dp || stall_read_dp);
+  
+ 
+  // ==========================================================
+  // Next State Logic
+  // ==========================================================
 
-  // ===========================================================================
-  // Datapath scaffolding (final gating will be in Output/Data Logic)
-  //  • We wire the payloads here so OL can simply pulse enables at the right time.
-  //  • ctrl_wen will typically pulse on addr_accept.
-  //  • ahb_data_wen will pulse in the write data phase (one cycle after write addr).
-  //  • apb_data_ren will pulse when you are completing a read data phase.
-  // ===========================================================================
-  assign ctrl_pipe     = {HWRITE, HTRANS, HBURST, HSIZE, HADDR};
+  always_comb begin
+    nstate = pstate;
+
+    unique case (pstate)
+      // =======================================================================
+      // ================================ IDLE =================================
+      // =======================================================================
+      // IDLE_STATE: begin
+      //   // No active transaction. Waiting for a valid transfer start from the AHB master.
+      //   nstate = IDLE_STATE;
+      //   if (nseq_accept) begin
+      //     if (HWRITE) begin
+      //       nstate = have_ctrl_space_needed ? WRITE_ADDR_VALID_STATE : WRITE_ADDR_WAIT_STATE;
+      //     end 
+      //     else begin
+      //       nstate = have_ctrl_space_needed ? READ_ADDR_VALID_STATE : READ_ADDR_WAIT_STATE;
+      //     end
+      //   end
+      //   else if (seq_accept) nstate = IDLE_STATE; // or an ERROR state later
+      // end
+      IDLE_STATE: begin
+        nstate = IDLE_STATE;
+
+        if (nseq_accept) begin
+          if (HWRITE) begin
+            // WRITE: next cycle is data phase
+            nstate = have_ctrl_space_needed ? WRITE_DATA_VALID_STATE
+                                            : WRITE_ADDR_WAIT_STATE;
+          end else begin
+            // READ: next cycle is data phase (wait if APB empty)
+            if (have_ctrl_space_needed) begin
+              nstate = apb_data_empty ? READ_DATA_WAIT_STATE
+                                      : READ_DATA_VALID_STATE;
+            end else begin
+              nstate = READ_ADDR_WAIT_STATE;
+            end
+          end
+        end
+        else if (seq_accept) begin
+          // Illegal: SEQ seen in IDLE (no prior NONSEQ)
+          // TODO: raise error flag or branch to ERROR state
+          nstate = IDLE_STATE;
+        end
+      end
+      // ========================================================================
+      // ================================ WRITE =================================
+      // ========================================================================
+      WRITE_ADDR_WAIT_STATE: begin
+        // Wait for ctrl FIFO space before starting/continuing write burst
+        nstate = WRITE_ADDR_WAIT_STATE;
+        if (have_ctrl_space_needed && addr_accept && HWRITE) nstate = WRITE_ADDR_VALID_STATE;
+      end
+      WRITE_ADDR_VALID_STATE: begin
+        // Accept a write address/control beat. Push {HWRITE,HTRANS,HBURST,HSIZE,HADDR} into Control FIFO.
+        nstate = WRITE_DATA_VALID_STATE;
+      end
+      WRITE_DATA_VALID_STATE: begin
+        // Consume one write data beat (HWDATA). Push it into AHB Data FIFO.
+        nstate = WRITE_DATA_VALID_STATE;
+        if (HREADYIN)  begin
+            if (addr_accept) begin
+              if (HWRITE) nstate = have_ctrl_space_needed ? WRITE_ADDR_VALID_STATE : WRITE_ADDR_WAIT_STATE;
+              else nstate = have_ctrl_space_needed ? READ_ADDR_VALID_STATE : READ_ADDR_WAIT_STATE;
+            end
+            else nstate = IDLE_STATE;
+          end
+      end
+      // ========================================================================
+      // ================================= READ =================================
+      // ========================================================================
+      READ_ADDR_WAIT_STATE: begin
+        // Wait for ctrl FIFO space before starting/continuing a read burst.
+        nstate = READ_ADDR_WAIT_STATE;
+        if (have_ctrl_space_needed && addr_accept && !HWRITE) nstate = READ_ADDR_VALID_STATE;
+      end
+      READ_ADDR_VALID_STATE: begin
+        // Accept a read address/control beat (push into Control FIFO).
+        nstate = READ_DATA_WAIT_STATE;
+      end
+      READ_DATA_WAIT_STATE: begin
+        // Read data is not yet available from APB domain (apb_data_empty=1).
+        nstate = READ_DATA_WAIT_STATE;
+        if (!apb_data_empty) nstate = READ_DATA_VALID_STATE;
+      end
+      READ_DATA_VALID_STATE: begin
+        // Read data is now valid. Drive HRDATA from apb_data_read and assert HREADYOUT=1 to complete data phase.
+        nstate = READ_DATA_VALID_STATE;
+        if (HREADYIN) begin
+          if (addr_accept) begin
+            if (HWRITE)
+              nstate = have_ctrl_space_needed ? WRITE_ADDR_VALID_STATE
+                                              : WRITE_ADDR_WAIT_STATE;
+            else
+              nstate = have_ctrl_space_needed ? READ_ADDR_VALID_STATE
+                                              : READ_ADDR_WAIT_STATE;
+          end else begin
+            nstate = IDLE_STATE;
+          end
+        end
+      end
+      // ========================================================================
+      // ================================ DEFAULT ===============================
+      // ========================================================================
+      default: nstate = IDLE_STATE;
+    endcase
+  end
+
+
+// Track remaining beats of the burst (using a counter):
+
+// logic [4:0] write_beats_left;
+
+// always_ff @(posedge HCLK or negedge HRESETn) begin
+//     if (!HRESETn) write_beats_left <= '0;
+//     else if (nseq_accept && HWRITE) write_beats_left <= burst_len(HBURST); // latch burst length
+//     else if (pstate == WRITE_DATA_VALID_STATE && HREADYIN) write_beats_left <= write_beats_left - 1;
+// end
+
+// Then the next-state logic becomes simpler:
+
+// WRITE_DATA_VALID_STATE: begin
+//     if (write_beats_left > 1) nstate = WRITE_DATA_VALID_STATE;
+//     else nstate = IDLE_STATE; // or next addr phase if another transfer queued
+// end
+
+// No need to check addr_accept in the middle of a write burst.
+// Only return to IDLE when the entire burst is done.
+
+
+  // ============================================================================
+  // Output Logic (OL) — FWFT read FIFO
+  //  • ctrl_wen matches NSL’s reservation rule
+  //  • ahb_data_wen/apb_data_ren only when owner completes a data beat
+  //  • HRDATA is driven directly from apb_data_read during READ_DATA_VALID_STATE
+  //    (FWFT ensures it’s already valid when apb_data_empty==0)
+  // ============================================================================
+  logic ctrl_push_ok;
+  assign ctrl_push_ok = need_full_this_beat ? have_ctrl_space_for_burst
+                                          : have_ctrl_space_now;
+  assign ctrl_pipe = {HWRITE, HTRANS, HBURST, HSIZE, HADDR};
   assign ahb_data_pipe = HWDATA;
-  assign HRDATA        = '0;        // Avoid X-prop; OL will mux apb_data_read
-  assign ctrl_wen      = 1'b0;      // OL will drive
-  assign ahb_data_wen  = 1'b0;      // OL will drive
-  assign apb_data_ren  = 1'b0;      // OL will drive
+  assign ctrl_wen = addr_accept && ctrl_push_ok;
+always_comb begin : OUTPUT_LOGIC
+  // defaults
+  ahb_data_wen  = 1'b0;
+  apb_data_ren  = 1'b0;
+  HRDATA        = '0;
 
-  // ===========================================================================
-  // NSL will be added below (not part of this file by design).
-  //
-  // NSL tips:
-  //  • Only advance on *_accept (qualified by HREADYin==1).
-  //  • For fixed bursts, check have_ctrl_space_needed before entering *_ADDR.
-  //  • For writes, consider coordinating ctrl FIFO acceptance with write-data
-  //    FIFO space policy (reserve upfront or allow data-phase stalls).
-  //  • For reads, move HIDLE→HREAD_ADDR when you can enqueue control, then
-  //    HREAD_WAIT until data shows, then HREAD_VALID to present HRDATA.
-  //  • BUSY must not advance anything (addr_valid filters it out already).
-  // ===========================================================================
-  // always_comb begin : NSL
-  //   nstate = pstate;
-  //   unique case (pstate)
-  //     HIDLE_STATE: begin
-  //       // Example (pseudo-plan):
-  //       // if (nseq_accept) begin
-  //       //   if (HWRITE)  nstate = have_ctrl_space_needed ? HWRITE_ADDR_STATE : HWRITE_WAIT_STATE;
-  //       //   else         nstate = have_ctrl_space_needed ? HREAD_ADDR_STATE  : HREAD_WAIT_STATE;
-  //       // end
-  //     end
-  //     // ...
-  //   endcase
-  // end
+  unique case (pstate)
+    // ------------------------------------------------------------------
+    WRITE_ADDR_VALID_STATE: begin
+      // Accept address -> push control only if reservation allows (and not full)
+     // ctrl_wen = addr_accept && ctrl_push_ok && !ctrl_full;
+    end
+
+    // ------------------------------------------------------------------
+    WRITE_DATA_VALID_STATE: begin
+      // Complete write-data beat -> push write-data if owner and FIFO not full
+      ahb_data_wen = selected_d && HREADYIN && !ahb_data_full;
+    end
+
+    // ------------------------------------------------------------------
+    READ_ADDR_VALID_STATE: begin
+      // Accept read address -> push control when allowed
+     // ctrl_wen = addr_accept && ctrl_push_ok && !ctrl_full;
+    end
+
+    // ------------------------------------------------------------------
+    READ_DATA_WAIT_STATE: begin
+      // Waiting for APB data; no pops. HRDATA remains '0 (no valid data yet).
+    end
+
+    // ------------------------------------------------------------------
+    READ_DATA_VALID_STATE: begin
+      // APB data available → drive HRDATA and pop when data-phase completes
+      // (FWFT: apb_data_read is already valid when apb_data_empty==0)
+      HRDATA       = apb_data_read;
+      apb_data_ren = selected_d && HREADYIN && !apb_data_empty;
+    end
+
+    default: begin
+      // keep defaults
+    end
+  endcase
+end
+
+
+
+// REMOVE these (XSIM doesn't support the 2nd line):
+// default clocking cb @(posedge HCLK); endclocking
+// default disable iff (!HRESETn);
+
+// Keep a plain per-property style:
+// AHB basic protocol assertions with pass displays
+property p_owner_only_stall;
+  @(posedge HCLK) disable iff (!HRESETn)
+    (HREADYOUT==0) |-> selected_d;
+endproperty
+assert property (p_owner_only_stall)
+  else $error("ASSERT FAIL: owner_only_stall violated");
+cover property (p_owner_only_stall)
+  $display("%0t PASS: owner_only_stall OK",$time);
+
+property p_accept_only_valid;
+  @(posedge HCLK) disable iff (!HRESETn)
+    addr_accept |-> HTRANS[1] && HSEL;
+endproperty
+assert property (p_accept_only_valid)
+  else $error("ASSERT FAIL: accept_only_valid violated");
+cover property (p_accept_only_valid)
+  $display("%0t PASS: accept_only_valid OK",$time);
+
+// repeat for the rest...
+
+
 
 
 endmodule
 
-// --------------------------- End of PRE-NSL file -----------------------------
+

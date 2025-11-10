@@ -1,0 +1,1 @@
+"work.tb_ahb_slave" -s "tb_ahb_slave" -debug "typical" 

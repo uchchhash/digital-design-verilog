@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Nov 11 04:07:14 2025
-# Process ID         : 72243
+# Start of session at: Tue Nov 11 04:00:55 2025
+# Process ID         : 70668
 # Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/sim
 # Command line       : xsim -mode tcl -source {xsim.dir/tb_ahb_slave/xsim_script.tcl}
 # Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/sim/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
-# CPU Frequency      : 3901.209 MHz
+# CPU Frequency      : 3996.464 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 6
 # Host memory        : 25056 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 33645 MB
-# Available Virtual  : 25321 MB
+# Available Virtual  : 25133 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_ahb_slave/xsim_script.tcl
 # xsim {tb_ahb_slave} -autoloadwcfg -runall
@@ -32,10 +32,10 @@ run -all
 35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
 45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
 45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
-55000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
-55000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
-65000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
-65000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
 === READ phase test ===
 75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
 75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
@@ -43,15 +43,15 @@ run -all
 85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
 95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
 95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
-105000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
-105000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
-115000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
-115000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=0 HRDATA=00000000
+115000 ST=7 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
 === DONE ===
-125000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
-125000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+125000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
 135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
 135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
 $finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:07:18 2025...
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:00:58 2025...

@@ -1,0 +1,762 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:43:31 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 133
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:43:35 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+ERROR: [VRFC 10-9107] incorrect use of predefined macro 'include'; expected '"filename"' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:1]
+ERROR: [VRFC 10-4982] syntax error near 'module' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:4]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'module' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:4]
+ERROR: [VRFC 10-4982] syntax error near 'initial' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:37]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'initial' used in incorrect context [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:37]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:44:14 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 133
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:44:17 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+ERROR: [VRFC 10-3195] cannot open include file 'ahb_slave.sv' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:1]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+ERROR: [VRFC 10-8530] module 'tb_ahb_slave' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv:4]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:44:56 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 133
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:45:00 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:45:37 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:45:40 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3823] variable 'ctrl_wen' might have multiple concurrent drivers [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:390]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:53:08 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:53:12 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:53:43 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 ST=4 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== READ phase test ===
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 ST=7 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 ST=8 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:53:46 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:54:16 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=4 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 ST=7 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=deadbeef
+125000 ST=8 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:54:20 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 03:58:11 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=0 HRDATA=00000000
+115000 ST=7 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+125000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 03:58:14 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+ERROR: [XSIM 43-3980] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 465 : The SystemVerilog feature "Default Disable iff declaration" is not supported yet for simulation.
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 04:00:55 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=0 HRDATA=00000000
+115000 ST=7 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+125000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:00:58 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+ERROR: [XSIM 43-3980] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 489 : The SystemVerilog feature "Default Disable iff declaration" is not supported yet for simulation.
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 04:02:25 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=3 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=3 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+65000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=6 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+105000 ST=6 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+115000 | ST=7 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=0 HRDATA=00000000
+115000 ST=7 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+125000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:02:29 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 04:03:17 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+65000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+105000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+115000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+125000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:03:21 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 500 : The "System Verilog Cover" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 509 : The "System Verilog Cover" is not supported yet for simulation. The statement will be ignored.
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 04:04:49 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+65000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+105000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+115000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+125000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:04:53 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
+INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_ahb_slave -s tb_ahb_slave -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 512 : The "System Verilog Cover" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" Line 521 : The "System Verilog Cover" is not supported yet for simulation. The statement will be ignored.
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ahb_slave_default
+Compiling module work.tb_ahb_slave
+Built simulation snapshot tb_ahb_slave
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Nov 11 04:07:14 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ahb_slave/xsim_script.tcl
+# xsim {tb_ahb_slave} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+25000 | ST=0 | HADDR=00 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+25000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== WRITE phase test ===
+35000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+35000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+45000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+45000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+55000 | ST=4 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+55000 ST=4 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=1 apb_ren=0
+65000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+65000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== READ phase test ===
+75000 | ST=0 | HADDR=10 | HWRITE=1 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+75000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+85000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+85000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+95000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+95000 ST=0 addr_valid=1 acc=1 selD=0 | ctrl_wen=1 ahb_wen=0 apb_ren=0
+105000 | ST=8 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=1 HREADYOUT=1 HRDATA=deadbeef
+105000 ST=8 addr_valid=0 acc=0 selD=1 | ctrl_wen=0 ahb_wen=0 apb_ren=1
+115000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+115000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+=== DONE ===
+125000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+125000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+135000 | ST=0 | HADDR=20 | HWRITE=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0 HREADYOUT=1 HRDATA=00000000
+135000 ST=0 addr_valid=0 acc=0 selD=0 | ctrl_wen=0 ahb_wen=0 apb_ren=0
+$finish called at time : 145 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" Line 134
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov 11 04:07:18 2025...
