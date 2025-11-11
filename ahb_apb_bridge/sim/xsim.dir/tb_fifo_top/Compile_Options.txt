@@ -1,0 +1,1 @@
+"work.tb_fifo_top" -s "tb_fifo_top" -debug "typical" 

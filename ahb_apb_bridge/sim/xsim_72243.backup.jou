@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Nov 11 03:58:11 2025
-# Process ID         : 70206
+# Start of session at: Tue Nov 11 04:07:14 2025
+# Process ID         : 72243
 # Current directory  : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/sim
 # Command line       : xsim -mode tcl -source {xsim.dir/tb_ahb_slave/xsim_script.tcl}
 # Log file           : /home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/sim/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
-# CPU Frequency      : 3903.357 MHz
+# CPU Frequency      : 3901.209 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 6
 # Host memory        : 25056 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 33645 MB
-# Available Virtual  : 25172 MB
+# Available Virtual  : 25321 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_ahb_slave/xsim_script.tcl
 run -all

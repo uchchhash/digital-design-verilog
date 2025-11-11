@@ -1,4 +1,4 @@
-../design/ahb_slave.sv
-../tb/tb_ahb_slave.sv
+../design/fifo_top.sv
+../tb/tb_fifo_top.sv
 
 

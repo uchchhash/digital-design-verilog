@@ -1,6 +1,10 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv" into library work
-INFO: [VRFC 10-311] analyzing module ahb_slave
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_ahb_slave.sv" into library work
-INFO: [VRFC 10-311] analyzing module ahb_slave
-WARNING: [VRFC 10-3609] overwriting previous definition of module 'ahb_slave' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/ahb_slave.sv:3]
-INFO: [VRFC 10-311] analyzing module tb_ahb_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_fifo_top
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:263]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:332]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:184]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:203]
+ERROR: [VRFC 10-2989] 'v' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:334]
+ERROR: [VRFC 10-8530] module 'tb_fifo_top' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:4]

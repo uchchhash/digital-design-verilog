@@ -1,0 +1,197 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_top
+ERROR: [VRFC 10-2951] 'i' is not a constant [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv:38]
+ERROR: [VRFC 10-1775] range must be bounded by constant expressions [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv:38]
+ERROR: [VRFC 10-8530] module 'fifo_top' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv:2]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_fifo_top -s tb_fifo_top -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+ERROR: [XSIM 43-3225] Cannot find design unit work.tb_fifo_top in library work located at xsim.dir/work.
+ERROR: Please check the snapshot name which is created during 'xelab',the current snapshot name "xsim.dir/tb_fifo_top/xsimk" does not exist 
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_fifo_top
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_fifo_top -s tb_fifo_top -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.fifo_top(DATA_WIDTH=8)
+Compiling module work.tb_fifo_top
+Built simulation snapshot tb_fifo_top
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Wed Nov 12 04:39:43 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_fifo_top/xsim_script.tcl
+# xsim {tb_fifo_top} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[45000] Starting FIFO test...
+[215000] FIFO full flag = 0, space = 1
+[235000] Tried writing when full (overflow test)
+[287000] Read data = 0, fifo_empty = 0
+[315000] Read data = 1, fifo_empty = 0
+[343000] Read data = 2, fifo_empty = 0
+[371000] Read data = 3, fifo_empty = 0
+[399000] Read data = 4, fifo_empty = 0
+[427000] Read data = 5, fifo_empty = 0
+[455000] Read data = 6, fifo_empty = 0
+[483000] Read data = 7, fifo_empty = 0
+[511000] Read data = 8, fifo_empty = 0
+[539000] Read data = 9, fifo_empty = 0
+[567000] Read data = 10, fifo_empty = 0
+[595000] Read data = 11, fifo_empty = 0
+[623000] Read data = 12, fifo_empty = 0
+[651000] Read data = 13, fifo_empty = 0
+[679000] Read data = 14, fifo_empty = 0
+[707000] Read data = 15, fifo_empty = 1
+[735000] Tried reading when empty (underflow test)
+[875000] Final fifo_empty=0, fifo_full=0, space=10
+$finish called at time : 975 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" Line 143
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 12 04:39:46 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_fifo_top
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:263]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:332]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:184]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:203]
+ERROR: [VRFC 10-2989] 'v' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:334]
+ERROR: [VRFC 10-8530] module 'tb_fifo_top' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:4]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_fifo_top -s tb_fifo_top -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.fifo_top(DATA_WIDTH=8)
+Compiling module work.tb_fifo_top
+Built simulation snapshot tb_fifo_top
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Wed Nov 12 04:44:10 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_fifo_top/xsim_script.tcl
+# xsim {tb_fifo_top} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[45000] Starting FIFO test...
+[215000] FIFO full flag = 0, space = 1
+[235000] Tried writing when full (overflow test)
+[287000] Read data = 0, fifo_empty = 0
+[315000] Read data = 1, fifo_empty = 0
+[343000] Read data = 2, fifo_empty = 0
+[371000] Read data = 3, fifo_empty = 0
+[399000] Read data = 4, fifo_empty = 0
+[427000] Read data = 5, fifo_empty = 0
+[455000] Read data = 6, fifo_empty = 0
+[483000] Read data = 7, fifo_empty = 0
+[511000] Read data = 8, fifo_empty = 0
+[539000] Read data = 9, fifo_empty = 0
+[567000] Read data = 10, fifo_empty = 0
+[595000] Read data = 11, fifo_empty = 0
+[623000] Read data = 12, fifo_empty = 0
+[651000] Read data = 13, fifo_empty = 0
+[679000] Read data = 14, fifo_empty = 0
+[707000] Read data = 15, fifo_empty = 1
+[735000] Tried reading when empty (underflow test)
+[875000] Final fifo_empty=0, fifo_full=0, space=10
+$finish called at time : 975 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" Line 143
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 12 04:44:14 2025...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/design/fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_fifo_top
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:263]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:332]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:184]
+ERROR: [VRFC 10-3733] system call 'urandom_range' expects one argument [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:203]
+ERROR: [VRFC 10-2989] 'v' is not declared [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:334]
+ERROR: [VRFC 10-8530] module 'tb_fifo_top' is ignored due to previous errors [/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv:4]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/ucchash/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/xelab work.tb_fifo_top -s tb_fifo_top -debug typical 
+Multi-threading is on. Using 4 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.fifo_top(DATA_WIDTH=8)
+Compiling module work.tb_fifo_top
+Built simulation snapshot tb_fifo_top
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Wed Nov 12 04:46:24 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_fifo_top/xsim_script.tcl
+# xsim {tb_fifo_top} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[45000] Starting FIFO test...
+[215000] FIFO full flag = 0, space = 1
+[235000] Tried writing when full (overflow test)
+[287000] Read data = 0, fifo_empty = 0
+[315000] Read data = 1, fifo_empty = 0
+[343000] Read data = 2, fifo_empty = 0
+[371000] Read data = 3, fifo_empty = 0
+[399000] Read data = 4, fifo_empty = 0
+[427000] Read data = 5, fifo_empty = 0
+[455000] Read data = 6, fifo_empty = 0
+[483000] Read data = 7, fifo_empty = 0
+[511000] Read data = 8, fifo_empty = 0
+[539000] Read data = 9, fifo_empty = 0
+[567000] Read data = 10, fifo_empty = 0
+[595000] Read data = 11, fifo_empty = 0
+[623000] Read data = 12, fifo_empty = 0
+[651000] Read data = 13, fifo_empty = 0
+[679000] Read data = 14, fifo_empty = 0
+[707000] Read data = 15, fifo_empty = 1
+[735000] Tried reading when empty (underflow test)
+[875000] Final fifo_empty=0, fifo_full=0, space=10
+$finish called at time : 975 ns : File "/home/ucchash/usarkar_work/github_repos/digital-design-verilog/ahb_apb_bridge/tb/tb_fifo_top.sv" Line 143
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov 12 04:46:28 2025...
